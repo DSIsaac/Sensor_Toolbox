@@ -32,3 +32,10 @@ TRANSLATIONS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+QMAKE_CFLAGS += /utf-8
+QMAKE_CXXFLAGS += /utf-8
+
+
+RESOURCES += \
+    res.qrc
