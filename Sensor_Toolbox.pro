@@ -16,11 +16,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    communication_widget.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    widget_tools.cpp
 
 HEADERS += \
-    mainwindow.h
+    communication_widget.h \
+    mainwindow.h \
+    widget_tools.h
 
 FORMS += \
     mainwindow.ui
@@ -33,8 +37,8 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-QMAKE_CFLAGS += /utf-8
-QMAKE_CXXFLAGS += /utf-8
+#QMAKE_CFLAGS += /utf-8
+#QMAKE_CXXFLAGS += /utf-8
 
 
 RESOURCES += \
