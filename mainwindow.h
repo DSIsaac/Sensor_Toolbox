@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QPushButton>
 #include <QStyle>
+#include "communication_widget.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -19,6 +20,8 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
+    Communication_Widget *Communication_Set_Widget;
 
     QPushButton *Data_Page_Button, *Sensor_Set_Page_Button, *Algorithm_Set_Page_Button;
     QString *Button_Style;

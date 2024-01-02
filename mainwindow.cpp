@@ -16,6 +16,7 @@ MainWindow::MainWindow(QWidget *parent)
     Data_Page_Button_Init();
     Sensor_Set_Page_Button_Init();
     Algorithm_Set_Page_Button_Init();
+    Communication_Set_Widget = new Communication_Widget();
 }
 
 MainWindow::~MainWindow()
@@ -42,8 +43,11 @@ void MainWindow::Data_Page_Button_Init()
     Data_Page_Button->setGeometry(side_margin, 360 - 100, top_margin, 200);
     Data_Page_Button->setToolTip("数据显示");
 
-    connect(Data_Page_Button, &QPushButton::released, this, [](){
-        Communication_Widget *widget = new Communication_Widget();
+    connect(Data_Page_Button, &QPushButton::released, this, [this](){
+//        Communication_Widget *widget = new Communication_Widget();
+        this->Communication_Set_Widget->setWindowModality(Qt::ApplicationModal);
+        this->Communication_Set_Widget->show();
+
     });
 }
 
